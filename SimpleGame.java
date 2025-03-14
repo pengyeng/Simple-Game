@@ -4,7 +4,7 @@ import java.awt.event.KeyEvent;
 
 public class SimpleGame extends JFrame {
     
-    private DisplayPanel displayPanel;
+    private DisplayPanel displayPanel;    
 
     private SimpleGame() {
         super("SimpleGame");
@@ -29,15 +29,25 @@ public class SimpleGame extends JFrame {
 					
 				case KeyEvent.VK_D:
                     displayPanel.character.moveRight();
+                    System.out.println(displayPanel.dog.diffInSeconds);
 					break;
-									
+
+                case KeyEvent.VK_W:
+                    displayPanel.character.moveUp();                
+					break;
+                
+                case KeyEvent.VK_X:
+                    displayPanel.character.moveDown();                
+					break;
+                    
 			    }        
             }
         });    
     }
 
 	public static void main(String[] args) {
-		SimpleGame simpleGame = new SimpleGame();
+		//System.out.println("Not running anything");
+        SimpleGame simpleGame = new SimpleGame();
         simpleGame.startGame();
 	}
 
